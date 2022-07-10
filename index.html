@@ -1,0 +1,217 @@
+ <style>
+     /* Style the video: 100% width and height to cover the entire window */
+#myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+/* Add some content at the bottom of the video/page */
+.content {
+  position: fixed;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  color: #f1f1f1;
+  width: 100%;
+  padding: 20px;
+}
+
+/* Style the button used to pause/play the video */
+#myBtn {
+  width: 200px;
+  font-size: 18px;
+  padding: 10px;
+  border: none;
+  background: #000;
+  color: #fff;
+  cursor: pointer;
+}
+
+#myBtn:hover {
+  background: #ddd;
+  color: black;
+} 
+ </style>
+
+ <style>
+    /* Style the links inside the sidenav */
+#mySidenav a {
+  position: absolute; /* Position them relative to the browser window */
+  left: -80px; /* Position them outside of the screen */
+  transition: 0.3s; /* Add transition on hover */
+  padding: 15px; /* 15px padding */
+  width: 100px; /* Set a specific width */
+  text-decoration: none; /* Remove underline */
+  font-size: 20px; /* Increase font size */
+  color: white; /* White text color */
+  border-radius: 0 5px 5px 0; /* Rounded corners on the top right and bottom right side */
+}
+
+#mySidenav a:hover {
+  left: 0; /* On mouse-over, make the elements appear as they should */
+}
+
+/* The about link: 20px from the top with a green background */
+#about {
+  top: 20px;
+  /* background-color: #04AA6D; */
+  background: rgba(0, 0, 0, 0.5);
+}
+
+#blog {
+  top: 80px;
+  /* background-color: #2196F3; Blue */
+  background: rgba(0, 0, 0, 0.5);
+}
+
+#projects {
+  top: 140px;
+  /* background-color: #f44336; Red */
+  background: rgba(0, 0, 0, 0.5);
+}
+
+#contact {
+  top: 200px;
+  /* background-color: #555 Light Black */
+  background: rgba(0, 0, 0, 0.5);
+}
+ </style>
+
+ <style>
+    h1 {
+        font-family: 'px-grotesk-bold'
+    }
+ </style>
+
+ <style>
+     /* Style the navigation menu */
+.topnav {
+  overflow: hidden;
+  /* background-color: #333; */
+  background: rgba(0, 0, 0, 0.5);
+  position: relative;
+}
+
+/* Hide the links inside the navigation menu (except for logo/home) */
+.topnav #myLinks {
+  display: none;
+}
+
+/* Style navigation menu links */
+.topnav a {
+  color: white;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  display: block;
+}
+
+/* Style the hamburger menu */
+.topnav a.icon {
+  /* background: black; */
+  background: rgba(0, 0, 0, 0.5);
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+/* Add a grey background color on mouse-over */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Style the active link (or home/logo) */
+.active {
+  /* background-color: #04AA6D; */
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+} 
+ </style>
+
+  <!-- Load an icon library to show a hamburger menu (bars) on small screens -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+
+ <!-- The video -->
+<video autoplay muted loop id="myVideo">
+  <source src="video.mp4" type="video/mp4">
+</video>
+
+<script>
+        // let unmuteButton = document.getElementById("unmuteButton");
+
+        // unmuteButton.addEventListener('click', function () {
+
+        //     let video = document.getElementById("myVideo")
+        //     video.muted = false;
+        // });
+</script>
+
+ <!-- <div id="mySidenav" class="sidenav">
+  <a href="#" id="about">About</a>
+  <a href="#" id="blog">Blog</a>
+  <a href="#" id="projects">Projects</a>
+  <a href="#" id="contact">Contact</a>
+</div>  -->
+
+<div class="content">
+  <h1>Flower</h1>
+  <p>Flowers are awesome and stuff!</p>
+  <p>Yay flowers!</p>
+    <!-- <button id="unmuteButton">unmute</button> -->
+  <!-- <button id="myBtn" onclick="myFunction()">one</button>
+  <button id="myBtn" onclick="myFunction()">two</button>
+  <button id="myBtn" onclick="myFunction()">three</button>
+  <button id="myBtn" onclick="myFunction()">four</button>
+  <button id="myBtn" onclick="myFunction()">five</button> -->
+</div> 
+
+<!-- Top Navigation Menu -->
+<div class="topnav">
+  <a href="#home" class="active">Logo</a>
+  <!-- Navigation links (hidden by default) -->
+  <div id="myLinks">
+    <a href="#news">News</a>
+    <a href="#contact">Contact</a>
+    <a href="#about">About</a>
+  </div>
+  <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
+  <a href="javascript:void(0);" class="icon" onclick="myFunction1()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div> 
+
+<script>
+// Get the video
+var video = document.getElementById("myVideo");
+
+// Get the button
+var btn = document.getElementById("myBtn");
+
+// Pause and play the video, and change the button text
+function myFunction() {
+  if (video.paused) {
+    video.play();
+    btn.innerHTML = "Pause";
+  } else {
+    video.pause();
+    btn.innerHTML = "Play";
+  }
+}
+</script>
+<script>
+    /* Toggle between showing and hiding the navigation menu links when the user clicks on the hamburger menu / bar icon */
+function myFunction1() {
+  var x = document.getElementById("myLinks");
+  if (x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+  }
+} 
+</script>
